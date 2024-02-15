@@ -1,0 +1,1 @@
+{"version":1,"defects":{"ShoppingListTest::testAddItemThatAlreadyExists":3,"ShoppingListTest::testClear":3,"ShoppingListTest::testRemoveItem":3},"times":{"ShoppingListTest::testAddItem":0.002,"ShoppingListTest::testAddItemThatAlreadyExists":0,"ShoppingListTest::testRemoveItem":0,"ShoppingListTest::testRemoveItemThatDoesNotExist":0,"ShoppingListTest::testClear":0}}
