@@ -8,13 +8,19 @@ class ListaNumerica
     }
 
     function encontrarMaiorElemento(array $lista)
-    {
+    { 
+        if(empty($lista))
+            return $maior = "Lista Vazia";
+
         $maior = max($lista);
         return $maior;
     }
 
     function encontrarMenorElemento(array $lista)
     {
+        if(empty($lista))
+            return $menor = "Lista Vazia";
+
         $menor = min($lista);
         return $menor;
     }

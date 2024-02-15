@@ -1,0 +1,1 @@
+{"version":1,"defects":{"ListaNumericaTest::testEncontrarMaiorElemento":3,"ListaNumericaTest::testEncontrarMenorElemento":3},"times":{"ListaNumericaTest::testSomarElementos":0.002,"ListaNumericaTest::testEncontrarMaiorElemento":0,"ListaNumericaTest::testEncontrarMenorElemento":0,"ListaNumericaTest::testOrdenarLista":0,"ListaNumericaTest::testFiltarNumerosPares":0}}
