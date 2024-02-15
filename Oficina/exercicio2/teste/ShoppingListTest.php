@@ -17,7 +17,7 @@ class ShoppingListTest extends TestCase
         $shoppingList = new ShoppingList();
         $shoppingList->addItem('carro');
         $shoppingList->addItem('carro');
-        $this->assertEquals(['carro', 'carro'], $shoppingList->getItems());
+        $this->assertEquals(['carro'], $shoppingList->getItems());
     }
 
     public function testRemoveItem()

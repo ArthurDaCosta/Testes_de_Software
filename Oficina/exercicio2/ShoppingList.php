@@ -6,6 +6,10 @@ class ShoppingList
 
     public function addItem($item)
     {
+        if (in_array($item, $this->items)) {
+            return;
+        }
+        
         $this->items[] = $item;
     }
 
