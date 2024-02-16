@@ -47,12 +47,26 @@ class ListaNumericaTest extends TestCase
     public function testOrdenarLista()
     {
         $listaNumerica = new ListaNumerica();
-        $this->assertEquals([1, 2, 3, 4], $listaNumerica->ordenarLista([4, 3, 2, 1]));
+        $this->assertEquals([1, 2, 3, 4]        , $listaNumerica->ordenarLista([1, 2, 3, 4]));     //Ordenar números positivos
+        $this->assertEquals([-4, -3, -2, -1]    , $listaNumerica->ordenarLista([-1, -2, -3, -4])); //Ordenar números negativos
+        $this->assertEquals([-4, -1, 2, 3]      , $listaNumerica->ordenarLista([-1, 2, 3, -4]));   //Ordenar números positivos e negativos
+        $this->assertEquals([0, 0, 0, 0]        , $listaNumerica->ordenarLista([0, 0, 0, 0]));     //Ordenar zeros
+        $this->assertEquals([1]                 , $listaNumerica->ordenarLista([1]));              //Ordenar um elemento positivo
+        $this->assertEquals([-2]                , $listaNumerica->ordenarLista([-2]));             //Ordenar um elemento negativo
+        $this->assertEquals([0]                 , $listaNumerica->ordenarLista([0]));              //Ordenar um elemento zero
+        $this->assertEquals("Lista Vazia"       , $listaNumerica->ordenarLista([]));               //ordenar lista vazia
     }
 
     public function testFiltarNumerosPares()
     {
         $listaNumerica = new ListaNumerica();
-        $this->assertEquals([2, 4], $listaNumerica->filtarNumerosPares([1, 2, 3, 4]));
+        $this->assertEquals([2, 4]              , $listaNumerica->filtarNumerosPares([1, 2, 3, 4]));     //Filtrar números pares positivos
+        $this->assertEquals([-2, -4]            , $listaNumerica->filtarNumerosPares([-1, -2, -3, -4])); ///Filtrar números pares negativos
+        $this->assertEquals([2, -4]             , $listaNumerica->filtarNumerosPares([-1, 2, 3, -4]));   //Filtrar números pares positivos e negativos
+        $this->assertEquals([0, 0, 0, 0]        , $listaNumerica->filtarNumerosPares([0, 0, 0, 0]));     //Filtrar zeros
+        $this->assertEquals([]                  , $listaNumerica->filtarNumerosPares([1]));              //Filtrar um elemento positivo
+        $this->assertEquals([-2]                , $listaNumerica->filtarNumerosPares([-2]));             //Filtrar um elemento negativo
+        $this->assertEquals([0]                 , $listaNumerica->filtarNumerosPares([0]));              //Filtrar um elemento zero
+        $this->assertEquals("Lista Vazia"       , $listaNumerica->filtarNumerosPares([]));               //Filtrar lista vazia
     }
 } 
