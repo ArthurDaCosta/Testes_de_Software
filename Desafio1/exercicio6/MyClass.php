@@ -23,5 +23,10 @@ class MyClass
     public function addMethod()
     {
         return true;
-    }  
+    }
+
+    public function __autoload()
+    {
+        return true;
+    }
 }

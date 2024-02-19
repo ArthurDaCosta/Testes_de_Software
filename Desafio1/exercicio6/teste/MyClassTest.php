@@ -9,10 +9,10 @@ class MyClassTest extends TestCase
     {
         $mock = $this->getMockBuilder('MyClass')
             ->setConstructorArgs(array(1, 2, 3))
-            ->addMethods(array('a'))
+            ->addMethods(array('Teste'))
             ->getMock();
 
-        $this->assertTrue(method_exists($mock, 'a'));
+        $this->assertTrue(method_exists($mock, 'Teste'));
     }
 
     public function testSetConstructorArgs()
@@ -50,20 +50,25 @@ class MyClassTest extends TestCase
     public function testDisableOriginalClone()
     {
         $mock = $this->getMockBuilder('MyClass')
-            ->disableOriginalConstructor()
-            ->onlyMethods(array('__clone'))
+            ->setConstructorArgs(array(1, 2, 3))
             ->disableOriginalClone()
             ->getMock();
-        
-        $this->assertEquals(null, $mock->a);
+
+        $clone = clone $mock;
+
+        $this->assertEquals('1', $clone->a);
+        $this->assertEquals('2', $clone->b);
+        $this->assertEquals('3', $clone->c);
     }
 
     public function testDisableAutoload()
     {
         $mock = $this->getMockBuilder('MyClass')
             ->disableOriginalConstructor()
-            ->disableAutoload()
-            ->getMock();      
+            ->disableAutoload() 
+            ->getMock();
+
+
     }
 
     public function testMethodWillReturn()
@@ -83,7 +88,7 @@ class MyClassTest extends TestCase
     public function testMethodReturnSelf()
     {
         $mock = $this->getMockBuilder('MyClass')
-            ->setConstructorArgs(array(1, 2, 3))
+            ->disableOriginalConstructor()
             ->onlyMethods(array('addMethod'))
             ->getMock();
 
